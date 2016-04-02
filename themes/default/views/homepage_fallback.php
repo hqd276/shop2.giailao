@@ -1,0 +1,1 @@
+<?php \CI::Banners()->show_collection(1)?>
