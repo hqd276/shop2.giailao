@@ -108,30 +108,34 @@ Class Products extends CI_Model
         }
     }
 
-    public function getProducts($category_id = false, $limit = false, $offset = false, $by=false, $sort=false)
+    public function getProducts($category_id = false, $limit = 9, $offset = 0, $by='name', $sort='ASC')
     {
         //if we are provided a category_id, then get products according to category
+        CI::db()->order_by($by, $sort)->limit($limit)->offset($offset);
+
         if ($category_id)
         {
-            CI::db()->select('category_products.*, products.*, saleprice_'.$this->customer->group_id.' as saleprice, price_'.$this->customer->group_id.' as price, LEAST(IFNULL(NULLIF(saleprice_'.$this->customer->group_id.', 0), price_'.$this->customer->group_id.'), price_'.$this->customer->group_id.') as sort_price', false)->from('category_products')->join('products', 'category_products.product_id=products.id')->where(array('category_id'=>$category_id, 'enabled_'.$this->customer->group_id=>1));
+            CI::db()->select('category_products.*, products.*, saleprice_'.$this->customer->group_id.' as saleprice, price_'.$this->customer->group_id.' as price, LEAST(IFNULL(NULLIF(saleprice_'.$this->customer->group_id.', 0), price_'.$this->customer->group_id.'), price_'.$this->customer->group_id.') as sort_price', false)->from('category_products')->join('products', 'category_products.product_id=products.id');
 
-            CI::db()->order_by($by, $sort);
-
-            $result = CI::db()->limit($limit)->offset($offset)->get()->result();
-
-            $products = [];
-
-            foreach($result as $product)
-            {
-                $products[] = $this->processImageDecoding($product);
-            }
-            return $products;
+            CI::db()->where(array('category_id'=>$category_id, 'enabled_'.$this->customer->group_id=>1));
+            
+            $result = CI::db()->get()->result();
         }
         else
         {
-            //sort by alphabetically by default
-            return CI::db()->order_by('name', 'ASC')->get('products')->result();
+            CI::db()->select('products.*, saleprice_'.$this->customer->group_id.' as saleprice, price_'.$this->customer->group_id.' as price, LEAST(IFNULL(NULLIF(saleprice_'.$this->customer->group_id.', 0), price_'.$this->customer->group_id.'), price_'.$this->customer->group_id.') as sort_price', false);
+
+            CI::db()->where(array( 'enabled_'.$this->customer->group_id=>1));
+
+            $result = CI::db()->get('products')->result();
         }
+        
+        $products = [];
+        foreach($result as $product)
+        {
+            $products[] = $this->processImageDecoding($product);
+        }
+        return $products;
     }
 
     public function count_all_products()
