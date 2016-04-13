@@ -73,8 +73,8 @@ $(document).ready(function(){
                                 <li><a href="<?php echo site_url('admin/customers');?>"><?php echo lang('common_customers'); ?></a></li>
                                 <li><a href="<?php echo site_url('admin/customers/groups');?>"><?php echo lang('common_groups'); ?></a></li>
                                 <li><a href="<?php echo site_url('admin/reports');?>"><?php echo lang('common_reports'); ?></a></li>
-                                <li><a href="<?php echo site_url('admin/coupons');?>"><?php echo lang('common_coupons'); ?></a></li>
-                                <li><a href="<?php echo site_url('admin/gift-cards');?>"><?php echo lang('common_gift_cards'); ?></a></li>
+                                <!-- <li><a href="<?php echo site_url('admin/coupons');?>"><?php echo lang('common_coupons'); ?></a></li>
+                                <li><a href="<?php echo site_url('admin/gift-cards');?>"><?php echo lang('common_gift_cards'); ?></a></li> -->
                             <?php endif; ?>
                         </ul>
                     </li>
@@ -87,7 +87,7 @@ $(document).ready(function(){
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="<?php echo site_url('admin/categories');?>"><?php echo lang('common_categories'); ?></a></li>
                             <li><a href="<?php echo site_url('admin/products');?>"><?php echo lang('common_products'); ?></a></li>
-                            <li><a href="<?php echo site_url('admin/digital_products');?>"><?php echo lang('common_digital_products'); ?></a></li>
+                            <!-- <li><a href="<?php echo site_url('admin/digital_products');?>"><?php echo lang('common_digital_products'); ?></a></li> -->
                         </ul>
                     </li>
 
@@ -103,9 +103,9 @@ $(document).ready(function(){
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo lang('common_administrative'); ?> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="<?php echo site_url('admin/settings');?>"><?php echo lang('common_gocart_configuration'); ?></a></li>
-                            <li><a href="<?php echo site_url('admin/shipping');?>"><?php echo lang('common_shipping_modules'); ?></a></li>
+                            <!-- <li><a href="<?php echo site_url('admin/shipping');?>"><?php echo lang('common_shipping_modules'); ?></a></li>
                             <li><a href="<?php echo site_url('admin/payments');?>"><?php echo lang('common_payment_modules'); ?></a></li>
-                            <li><a href="<?php echo site_url('admin/settings/canned_messages');?>"><?php echo lang('common_canned_messages'); ?></a></li>
+                            <li><a href="<?php echo site_url('admin/settings/canned_messages');?>"><?php echo lang('common_canned_messages'); ?></a></li> -->
                             <li><a href="<?php echo site_url('admin/locations');?>"><?php echo lang('common_locations'); ?></a></li>
                             <li><a href="<?php echo site_url('admin/users');?>"><?php echo lang('common_administrators'); ?></a></li>
                             <li><a href="<?php echo site_url('admin/sitemap');?>"><?php echo 'Sitemap'; ?></a></li>
