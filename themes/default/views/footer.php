@@ -8,6 +8,10 @@
 
         <div class="credits">
         </div>
+        <div class="alert alert-info" role="alert">
+        Specialized in French souvenirs, PARICI store offers a wide range of gifts, clothing, accessories, home decoration, toys and gadgets that refers to France, its monuments, its culture and everything that would remind a bit of France.
+        </div>
+        <p class="text-center">Copyright 2016 Souvenirs de Paris - Parici • All Rights Reserved.</p>
     </div>
 </footer>
 

@@ -61,6 +61,10 @@ if(isset($additional_header_info))
 ?>
 <link href='<?php echo theme_css('gumboIcons.css');?>' rel='stylesheet' type='text/css'>
 <link href='<?php echo theme_css('gumbo/elem-grid.css');?>' rel='stylesheet' type='text/css'>
+
+<link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 </head>
 
 <body>
@@ -69,7 +73,7 @@ if(isset($additional_header_info))
     <div class="container">
         <div class="col-nest">
             <div class="col" data-cols="1/2">
-                <a class="logo" href="<?php echo base_url();?>"><img src="<?php echo theme_img('logo.svg');?>" /></a>
+                <a class="logo" href="<?php echo base_url();?>"><img src="<?php echo theme_img('logo.png');?>" /></a>
             </div>
             <div class="col" data-cols="1/2">
                 <nav> 
